@@ -29,6 +29,23 @@ function generatePassword() {
   var upper = 'abcdefghijklmnopqrstuvwxyz'.toUppercase().split('')
   var special = '!@#%^&**()_'.split('')
   var chosenCharacters = []
+  var password = []
+  
+  if (passwordLower === true) {
+    for (var i = 0; i < lower.length; i++) {
+      chosenCharacters.push(lower[i])
+    }
+  }
+  if (passwordUpper === true) {
+
+  }
+  if (passwordNumeric === true) {
+
+  }
+  if (passwordSpecial === true) {
+
+  }
+
 }
 
 
