@@ -1,76 +1,88 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// prompt & confirm
+// variables
+var num = '0123456789'.split('');
+var lower = 'abcdefghijklmnopqrstuvwxyz'.split('');
+var upper = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+var special = '!@#%^&**(*&^$#)_'.split('');
+
+// prompts & confirms
 var pwdLength = prompt("How long do you want your password to be (8-128 characters)")
 while (pwdLength < 8) {
   alert("Did not meet minimun length requirements");
-  pwdLength = prompt("Choose length of password (8-128 characters)");
+  pwdLength = prompt("Choose length of password between 8-128 characters");
 }
-var passwordLower = confirm("Do you want lowercase letters?")
+var lowerChosen = confirm("Do you want lowercase letters?")
 
-var passwordUpper = confirm("Do you want upper letters?")
+var upperChosen = confirm("Do you want upper letters?")
 
-var passwordNumeric = confirm("Do you want numbers?")
+var numChosen = confirm("Do you want numbers?")
 
-var passwordSpecial = confirm("Do you want any special characters?")
+var specialChosen = confirm("Do you want any special characters?")
 
 console.log(pwdLength);
-console.log(passwordLower);
-console.log(passwordUpper);
-console.log(passwordSpecial);
+console.log(lowerChosen);
+console.log(upperChosen);
+console.log(specialChosen);
+console.log(numChosen);
 
 // create function from selected user choice
 function generatePassword() {
-  var num = '0123456789'.split('');
-  var lower = 'abcdefghijklmnopqrstuvwxyz'.split('');
-  var upper = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
-  var special = '!@#%^&**(*&^$#)_'.split('');
   var chosenCharacters = [];
   var password = []
 
-  // if (passwordLower === true) {
-  //   for (var i = 0; i < lower.length; i++) {
-  //     chosenCharacters.push(lower[i]);
-  //     // password += passwordLower;
-  //   }
-  // }
-  if (passwordLower) {
-    chosenCharacters += passwordLower
+  if (lowerChosen === true) {
+    for (var i = 0; i < lower.length; i++) {
+      chosenCharacters.push(getRandom[lower]);
+      password += lowerChosen;
+    }
   }
-  // if (passwordUpper === true) {
-  //   for (var i = 0; i < upper.length; i++) {
-  //     chosenCharacters.push(upper[i]);
-  //     // password += passwordUpper
-  //   }
-  // }
-  if (passwordUpper) {
-    chosenCharacters += passwordUpper
+  if (upperChosen === true) {
+    for (var i = 0; i < upper.length; i++) {
+      chosenCharacters.push(getRandom[upper]);
+      password += upperChosen;
+    }
   }
-  // if (passwordNumeric === true) {
-  //   for (var i = 0; i < special.length; i++) {
-  //     chosenCharacters.push(special[i]);
-  //     // password += passwordNumeric
-  //   }
-  // }
-  if (passwordNumeric) {
-    chosenCharacters += passwordNumeric
+  if (numChosen === true) {
+    for (var i = 0; i < numChosen.length; i++) {
+      chosenCharacters.push(getRandom[numChosen]);
+      password += numChosen;
+     }
   }
-  if (passwordSpecial) {
-    chosenCharacters += passwordSpecial
+  if (specialChosen === true) {
+    for (var i = 0; i < specialChosen.length; i++) {
+      chosenCharacters.push(getRandom[specialChosen]);
+      password += specialChosen;
+     }
   }
-  // if (passwordSpecial === true) {
-  //   for (var i = 0; i < num.length; i++) {
-  //     chosenCharacters.push(num[i]);
-  //     // password += passwordSpecial
-  //   }
-  // }
-console.log(chosenCharacters);
+  console.log(chosenCharacters);
 
-  // create return
-//   return password;
-// }
+  for (var i = 0; i < password; i++) {
+    var
+  }
 
+  
+}
+
+function getRandom() {
+  var randIndex = Math.floor(Math.random() * lower.length);
+  password += lower[randIndex];
+
+  var randIndex = Math.floor(Math.random() * upper.length);
+  password += upper[randIndex]; 
+
+   var randIndex = Math.floor(Math.random() * special.length);
+  password += special[randIndex];  
+
+  var randIndex = Math.floor(Math.random() * num.length);
+  password += num[randIndex];
+
+}
+
+// create return
+// console.log ("final password", password)
+// return password;
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
