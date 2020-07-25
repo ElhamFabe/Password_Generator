@@ -15,10 +15,11 @@ function writePassword() {
 
 
 var passwordLength = prompt("How long do you want your password to be (8-128 characters)")
-if (passwordLength < 8) {
-  alert ("Did not meet minimun length requirements")
-}
 
+while (passwordLength < 8) {
+  alert("Did not meet minimun length requirements");
+  passwordLength = prompt ("Choose length of password (8-128 characters)");
+} 
 var passwordLower = confirm("Do you want lowercase letters?")
 
 var passwordUpper = confirm("Do you want upper letters?")
@@ -34,6 +35,8 @@ console.log(passwordSpecial);
 
 // create function from selected user choice
 function generatePassword() {
+
+  
   var num = '0123456789'.split('');
   var lower = 'abcdefghijklmnopqrstuvwxyz'.split('');
   var upper = 'abcdefghijklmnopqrstuvwxyz'.toUppercase().split('');
