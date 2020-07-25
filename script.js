@@ -10,17 +10,14 @@ function writePassword() {
 
 }
 
-
-  // printing to see data
-  console.log(num);
-  console.log(lower);
-  console.log(upper);
-  console.log(special);
-
 // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
 
+
 var passwordLength = prompt("How long do you want your password to be (8-128 characters)")
+if (passwordLength < 8) {
+  alert ("Did not meet minimun length requirements")
+}
 
 var passwordLower = confirm("Do you want lowercase letters?")
 
@@ -29,6 +26,11 @@ var passwordUpper = confirm("Do you want upper letters?")
 var passwordNumeric = confirm("Do you want numbers?")
 
 var passwordSpecial = confirm("Do you want any special characters?")
+
+console.log(passwordLength);
+console.log(passwordLower);
+console.log(passwordUpper);
+console.log(passwordSpecial);
 
 // create function from selected user choice
 function generatePassword() {
