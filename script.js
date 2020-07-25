@@ -9,10 +9,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
-var passwordLength =false;
-var passwordLower = false;
-var passwordUpper
-var minPassword = 8;
+
 
   // printing to see data
   console.log(num);
