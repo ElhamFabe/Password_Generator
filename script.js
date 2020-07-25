@@ -7,6 +7,8 @@ var lower = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var upper = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
 var special = '!@#%^&**(*&^$#)_'.split('');
 
+var actualCharacters = []
+
 // prompts & confirms
 var pwdLength = prompt("How long do you want your password to be (8-128 characters)")
 while (pwdLength < 8) {
@@ -30,66 +32,49 @@ console.log(numChosen);
 // create function from selected user choice
 function generatePassword() {
   var chosenCharacters = [];
-  var password = []
-
+  
   if (lowerChosen === true) {
     for (var i = 0; i < lower.length; i++) {
-      chosenCharacters.push(getRandom[lower]);
-      password += lowerChosen;
+      chosenCharacters.push(getRandom(lower));
     }
   }
   if (upperChosen === true) {
     for (var i = 0; i < upper.length; i++) {
-      chosenCharacters.push(getRandom[upper]);
-      password += upperChosen;
+      chosenCharacters.push(getRandom(upper));
     }
   }
   if (numChosen === true) {
-    for (var i = 0; i < numChosen.length; i++) {
-      chosenCharacters.push(getRandom[numChosen]);
-      password += numChosen;
-     }
+    for (var i = 0; i < num.length; i++) {
+      chosenCharacters.push(getRandom(num));
+    }
   }
   if (specialChosen === true) {
-    for (var i = 0; i < specialChosen.length; i++) {
-      chosenCharacters.push(getRandom[specialChosen]);
-      password += specialChosen;
-     }
+    for (var i = 0; i < special.length; i++) {
+      chosenCharacters.push(getRandom(special));
+    }
   }
   console.log(chosenCharacters);
 
-  for (var i = 0; i < password; i++) {
-    var
+  for (var i = 0; i < pwdLength; i++) {
+     actualCharacters.push(getRandom(chosenCharacters));
+  }
+  console.log(actualCharacters)
+  // console.log("final password", resolve)
+  return actualCharacters.join("");
   }
 
-  
+function getRandom(arr) {
+  var randIndex = Math.floor(Math.random() * arr.length);
+  var randEl = arr[randIndex];
+
+  return randEl;
 }
 
-function getRandom() {
-  var randIndex = Math.floor(Math.random() * lower.length);
-  password += lower[randIndex];
-
-  var randIndex = Math.floor(Math.random() * upper.length);
-  password += upper[randIndex]; 
-
-   var randIndex = Math.floor(Math.random() * special.length);
-  password += special[randIndex];  
-
-  var randIndex = Math.floor(Math.random() * num.length);
-  password += num[randIndex];
-
-}
-
-// create return
-// console.log ("final password", password)
-// return password;
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
