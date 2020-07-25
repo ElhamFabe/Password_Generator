@@ -9,9 +9,19 @@ function writePassword() {
   passwordText.value = password;
 
 }
+var passwordLength =false;
+var passwordLower = false;
+var passwordUpper
+var minPassword = 8;
+
+  // printing to see data
+  console.log(num);
+  console.log(lower);
+  console.log(upper);
+  console.log(special);
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
 
 var passwordLength = prompt("How long do you want your password to be (8-128 characters)")
 
@@ -23,30 +33,58 @@ var passwordNumeric = confirm("Do you want numbers?")
 
 var passwordSpecial = confirm("Do you want any special characters?")
 
+// create function from selected user choice
 function generatePassword() {
-  var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  var lower = 'abcdefghijklmnopqrstuvwxyz'.split('')
-  var upper = 'abcdefghijklmnopqrstuvwxyz'.toUppercase().split('')
-  var special = '!@#%^&**()_'.split('')
-  var chosenCharacters = []
+  var num = '0123456789'.split('');
+  var lower = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  var upper = 'abcdefghijklmnopqrstuvwxyz'.toUppercase().split('');
+  var special = '!@#%^&**(*&^$#)_'.split('');
+  var chosenCharacters = [];
   var password = []
-  
+
   if (passwordLower === true) {
     for (var i = 0; i < lower.length; i++) {
-      chosenCharacters.push(lower[i])
+      chosenCharacters.push(lower[i]);
+      password += passwordLower;
     }
   }
   if (passwordUpper === true) {
-
+    for (var i = 0; i < upper.length; i++) {
+      chosenCharacters.push(upper[i]);
+      password += passwordUpper
+    }
   }
   if (passwordNumeric === true) {
-
+    for (var i = 0; i < special.length; i++) {
+      chosenCharacters.push(special[i]);
+      password += passwordNumeric
+    }
   }
   if (passwordSpecial === true) {
-
+    for (var i = 0; i < num.length; i++) {
+      chosenCharacters.push(num[i]);
+      password += passwordSpecial
+    }
   }
 
+
+  // create return
+  return
 }
+
+
+// console log to see the data
+// console.log(num);
+// console.log(lower);
+// console.log(upper);
+// console.log(special);
+
+// Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
+// Collapse
+
+
+
 
 
 
