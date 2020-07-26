@@ -9,6 +9,7 @@ The client expressed how they would like a password generator that can help any 
 ### Installation 
 
 Url of Github repository:
-
+https://github.com/ElhamFabe/Password_Generator
 
 Url of deployed application:
+https://elhamfabe.github.io/Password_Generator/
