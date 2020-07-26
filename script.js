@@ -32,7 +32,7 @@ console.log(numChosen);
 // create function from selected user choice
 function generatePassword() {
   var chosenCharacters = [];
-  
+
   if (lowerChosen === true) {
     for (var i = 0; i < lower.length; i++) {
       chosenCharacters.push(getRandom(lower));
@@ -56,12 +56,12 @@ function generatePassword() {
   console.log(chosenCharacters);
 
   for (var i = 0; i < pwdLength; i++) {
-     actualCharacters.push(getRandom(chosenCharacters));
+    actualCharacters.push(getRandom(chosenCharacters));
   }
   console.log(actualCharacters)
   // console.log("final password", resolve)
   return actualCharacters.join("");
-  }
+}
 
 function getRandom(arr) {
   var randIndex = Math.floor(Math.random() * arr.length);
